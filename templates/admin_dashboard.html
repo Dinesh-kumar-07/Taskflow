@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Admin Dashboard</h1>
+<p>Welcome, {{ user.name }}</p>
+
+<div class="cards">
+    <div class="card">Total Tasks <b>{{ counts.total }}</b></div>
+    <div class="card">Pending <b>{{ counts.pending }}</b></div>
+    <div class="card">In Progress <b>{{ counts.in_progress }}</b></div>
+    <div class="card">Completed <b>{{ counts.completed }}</b></div>
+    <div class="card danger">Overdue <b>{{ counts.overdue }}</b></div>
+    <div class="card">Progress <b>{{ counts.progress }}%</b></div>
+</div>
+
+<h2>Recent Tasks</h2>
+
+<table>
+    <tr>
+        <th>Project</th>
+        <th>Task</th>
+        <th>Assigned To</th>
+        <th>Status</th>
+        <th>Due Date</th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <td>{{ task.project.title }}</td>
+        <td>{{ task.title }}</td>
+        <td>{{ task.assignee.name }}</td>
+        <td><span class="badge">{{ task.status }}</span></td>
+        <td>{{ task.due_date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

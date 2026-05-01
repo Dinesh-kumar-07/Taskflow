@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="auth-card">
+    <h2>Signup</h2>
+
+    <form method="POST">
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <label>Role</label>
+        <select name="role" required>
+            <option value="member">Member</option>
+            <option value="admin">Admin</option>
+        </select>
+
+        <button type="submit">Signup</button>
+    </form>
+
+    <p>Already have account? <a href="{{ url_for('login') }}">Login</a></p>
+</div>
+{% endblock %}

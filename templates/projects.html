@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Project Management</h1>
+
+<div class="form-card">
+    <h2>Create Project</h2>
+    <form method="POST">
+        <label>Project Title</label>
+        <input type="text" name="title" required>
+
+        <label>Description</label>
+        <textarea name="description"></textarea>
+
+        <label>Deadline</label>
+        <input type="date" name="deadline">
+
+        <button type="submit">Create Project</button>
+    </form>
+</div>
+
+<h2>All Projects</h2>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Deadline</th>
+        <th>Members</th>
+        <th>Add Member</th>
+    </tr>
+
+    {% for project in projects %}
+    <tr>
+        <td>{{ project.title }}</td>
+        <td>{{ project.description }}</td>
+        <td>{{ project.deadline }}</td>
+        <td>
+            {% for item in project.members %}
+                <span class="badge">{{ item.user.name }}</span>
+            {% endfor %}
+        </td>
+        <td>
+            <form method="POST" action="{{ url_for('add_project_member', project_id=project.id) }}" class="inline-form">
+                <select name="user_id" required>
+                    <option value="">Select Member</option>
+                    {% for member in members %}
+                        <option value="{{ member.id }}">{{ member.name }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Add</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
