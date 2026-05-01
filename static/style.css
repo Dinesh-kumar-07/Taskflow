@@ -1,1 +1,165 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
+body {
+    margin: 0;
+    background: #f4f7fb;
+    color: #222;
+}
+
+nav {
+    background: #1f2937;
+    color: white;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .brand {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.container {
+    width: 90%;
+    margin: 30px auto;
+}
+
+.auth-card,
+.form-card {
+    background: white;
+    max-width: 450px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+form label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+textarea {
+    height: 90px;
+}
+
+button {
+    margin-top: 15px;
+    background: #2563eb;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 18px;
+    margin: 25px 0;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.card b {
+    display: block;
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+.danger {
+    border-left: 5px solid #dc2626;
+}
+
+table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+th,
+td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+th {
+    background: #e5e7eb;
+}
+
+.badge {
+    background: #e0ecff;
+    color: #1d4ed8;
+    padding: 6px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin: 3px;
+    font-size: 13px;
+}
+
+.inline-form {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.inline-form select {
+    min-width: 140px;
+}
+
+.alert {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.demo-box {
+    margin-top: 15px;
+    background: #f1f5f9;
+    padding: 12px;
+    border-radius: 8px;
+}
